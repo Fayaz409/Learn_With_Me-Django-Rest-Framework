@@ -10,8 +10,8 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 @csrf_exempt
 def student_api(request):
-    student=Student.objects.all()
-    print('Students Queryset:',student)
+    # student=Student.objects.all()
+    # print('Students Queryset:',student)
     # return HttpResponse("Hello World")
     try:
         if request.method == 'GET':
