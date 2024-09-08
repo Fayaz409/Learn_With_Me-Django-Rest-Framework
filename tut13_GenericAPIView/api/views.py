@@ -9,7 +9,6 @@ from .serializers import StudentSerializer
 
 
 
-
 class StudentList(GenericAPIView,ListModelMixin):
     queryset=Student.objects.all()
     serializer_class=StudentSerializer
