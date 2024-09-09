@@ -1,5 +1,5 @@
 from pathlib import Path
-from datetime import timedelta
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-7p0r)3m)6yuuu701#lm9+4*6wsjgxcv0yx=d08+2m)l(b^dr*)'
+SECRET_KEY = 'django-insecure-850(w(@f_2zdgl*)26stml3o2%=(hm%ss8o^5bxs^d2&h$x9w6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'api',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -39,7 +39,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'tut29_JWT.urls'
+ROOT_URLCONF = 'tut30_throttling.urls'
 
 TEMPLATES = [
     {
@@ -57,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tut29_JWT.wsgi.application'
+WSGI_APPLICATION = 'tut30_throttling.wsgi.application'
 
 
 # Database
@@ -113,8 +113,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-SIMPLE_JWT={
-    'ACCESS_TOKEN_LIFETIME':timedelta(minutes=10),
-    'REFRESH_TOKEN_LIFETIME':timedelta(minutes=100),
-    'ROTATE_REFRESH_TOKEN':True
+REST_FRAMEWORK={
+    'DEFAULT_THROTTLE_RATES':{
+        'anon':'2/day',
+        'user':'5/hour'
+    }
 }
