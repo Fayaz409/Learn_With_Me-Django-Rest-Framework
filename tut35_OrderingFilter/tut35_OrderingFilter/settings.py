@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-nc5rt%-nt3!a$17jh_j#+h9&cn^=u0^x_dgtdzpujo=^agbnv)'
+SECRET_KEY = 'django-insecure-_v25*%c)gbe@_+*1m#&%%om+*(i)-*0ovo5&v=$)5xpm#lo0sv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'api',
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -39,7 +40,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'tut34_SearchFilter.urls'
+ROOT_URLCONF = 'tut35_OrderingFilter.urls'
 
 TEMPLATES = [
     {
@@ -57,9 +58,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tut34_SearchFilter.wsgi.application'
+WSGI_APPLICATION = 'tut35_OrderingFilter.wsgi.application'
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Using database-backed sessions
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -112,7 +112,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-REST_FRAMEWORK={
-    'SEARCH_PARAM':'q'
-}
